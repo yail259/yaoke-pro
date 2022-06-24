@@ -1,5 +1,11 @@
 .container {
+  color:azure;
+  background-color:#28282B;
   padding: 0 2rem;
+}
+
+.cool {
+  color: #6495ED;
 }
 
 .main {
