@@ -30,7 +30,7 @@ export default function Home() {
         </pre>
 
         <div className={styles.grid}>
-          <Link href="programming-resources">
+          <Link href="programming">
             <a className={styles.card}>
               <h2> <MdComputer/> programming; </h2>
               <p>good programming resources </p>
@@ -39,7 +39,7 @@ export default function Home() {
           
           <Link href="time">
             <a className={styles.card}>
-              <h2> <GiSandsOfTime/> what time is it???  </h2>
+              <h2> <GiSandsOfTime/> what time is it??? </h2>
               
             </a>
           </Link>
@@ -47,8 +47,8 @@ export default function Home() {
           <Link href="blog">
             <a className={styles.card}>
 
-              <h2><BsFillPenFill/> blog?!?!?!?!</h2>
-              <p>i'm bad at writing but judge for yourself :|</p>
+              <h2><BsFillPenFill/> fiction?!?!?!?!</h2>
+              <p>why would you read fake stuff? </p>
             </a>
           </Link>
           

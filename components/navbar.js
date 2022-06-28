@@ -6,6 +6,18 @@ import { BsFillPenFill } from 'react-icons/bs'
 import { BiHomeHeart } from 'react-icons/bi'
 
 
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+const NavbarIcon = ({ icon, goto = '/' }) => {
+    return(
+        <Link href={goto}>
+            
+            <div className='navbar-icon group'>
+                {icon} 
+            </div>
+        </Link>
+    )
+}
+
 export default function Navbar() {
     return (
         <>
@@ -24,14 +36,3 @@ export default function Navbar() {
     )
 }
 
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-const NavbarIcon = ({ icon, goto = '/' }) => {
-    return(
-        <Link href={goto}>
-            
-            <div className='navbar-icon group'>
-                {icon} 
-            </div>
-        </Link>
-    )
-}

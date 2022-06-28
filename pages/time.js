@@ -3,10 +3,6 @@ import Image from 'next/image';
 
 import React, { useEffect, useState } from 'react';
 
-import Navbar from '../components/navbar'
-
-
-
 
 export default function Time() {
 
@@ -43,35 +39,34 @@ export default function Time() {
         
     }, [time]);
 
-  return (
-    <>              
-        
-        <Image src="/morbius.png" alt="it's morbin' time" layout='fill'/>
-        
-        <iframe className="fixed my-auto bottom-0 border-0 width-350px height-800px" src="https://bandcamp.com/EmbeddedPlayer/track=2833872005/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless>
-            {/* <a href="https://epicgamemusic.bandcamp.com/track/its-morbin-time">
-                It&#39;s Morbin&#39; Time by Epic Game Music
-            </a> */}
-        </iframe>
 
-        <div className='container mx-auto'>
+    return (
+        <>              
+            <div className='block mt-16 object-center' >
+                <Image src="/morbius.png" alt="it's morbin' time" width={1920} height={1080} layout='responsive' />
+            </div>
+            
+            <iframe className="fixed my-auto bottom-0 border-0 width-350px height-800px" src="https://bandcamp.com/EmbeddedPlayer/track=2833872005/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless>
+                {/* <a href="https://epicgamemusic.bandcamp.com/track/its-morbin-time">
+                    It&#39;s Morbin&#39; Time by Epic Game Music
+                </a> */}
+            </iframe>
 
-            <div className='border-slate-500 border-2 p-6 fixed bottom-5 right-5 mx-auto bg-slate-700 rounded-xl shadow-lg flex items-center space-x-4'>
-                <p className='text-right font-bold'>
-                    you've spent <br/>
-                    {days} days <br/>
-                    {hours} hours <br/>
-                    {minutes} minutes <br/>
-                    {seconds} seconds <br/>
-                    morbin'
-                </p>
-            </div>            
-        </div>
+            <div className='container mx-auto'>
 
-        <Navbar/>
-        
-    </>
-  );
+                <div className='border-slate-500 border-2 p-6 fixed bottom-5 right-5 mx-auto bg-slate-700 rounded-xl shadow-lg flex items-center space-x-4'>
+                    <p className='text-right font-bold'>
+                        you've spent <br/>
+                        {days} days <br/>
+                        {hours} hours <br/>
+                        {minutes} minutes <br/>
+                        {seconds} seconds <br/>
+                        morbin'
+                    </p>
+                </div>            
+            </div>        
+        </>
+    );
 }
 
 //setInterval(tick, 1000);
