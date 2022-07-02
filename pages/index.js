@@ -12,11 +12,7 @@ import { BsFillPenFill } from 'react-icons/bs'
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Head>
-        <title>yao's digital playground</title>
-        <meta name="description" content="yao's awesome content" />
-        <link rel="icon" href="/bird.png" />
-      </Head>
+      
 
       <main className={styles.main}>
         <h1 className={styles.title}>

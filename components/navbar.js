@@ -21,15 +21,13 @@ const NavbarIcon = ({ icon, goto = '/' }) => {
 export default function Navbar() {
     return (
         <>
-            <div className="fixed justify-end top-0 left-0 w-screen h-16 m-0 flex flex-row bg-gray-900 shadow-lg">
+            <div className="px-8 fixed justify-end top-0 left-0 w-screen h-16 m-0 flex flex-row bg-gray-900 shadow-lg">
                 <NavbarIcon icon={<BsFillPenFill size="28" />} goto='blog'/>
                 <NavbarIcon icon={<GiSandsOfTime size="32" />} goto='time'/>
-                <NavbarIcon icon={<MdComputer size="32" />} goto='programming-resources'/>
-                
-            </div>
+                <NavbarIcon icon={<MdComputer size="32" />} goto='programming'/>
 
-            <div className="fixed justify-start top-0 left-0 w-16 h-16 m-0 flex flex-row bg-gray-900 shadow-lg">
-                <NavbarIcon icon={<BiHomeHeart size="32" goto='home' /> } />
+                <NavbarIcon className='float-left' icon={<BiHomeHeart size="32" goto='home' /> } />
+                
             </div>
         </>
         

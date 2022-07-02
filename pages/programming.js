@@ -9,7 +9,7 @@ export default function Blog() {
   return (
     <>
 
-      <ul className='mt-24'>
+      <ul className='mt-24 flex max-w-screen-lg'>
         
           <Link href={'prog_blog/pitfall'}>
             <div className=" cloumns-2 my-6 py-4 p-6 px-4 mx-10 rounded-lg border shadow-md bg-gray-800 border-gray-700 hover:bg-gray-700 text-white hover:text-blue-400" >

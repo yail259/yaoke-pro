@@ -1,4 +1,6 @@
-import Image from 'next/image';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+// import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
 import { GiConsoleController } from 'react-icons/gi';
 
 const post_info = {
@@ -6,26 +8,32 @@ const post_info = {
   date: "27.06.2022",
 }
 
+// <Image src={monty_python} alt="Monty Python" width={300} height={200}/>
 
 export default function Blog() {
     
   return (
     <>
-
-      <div className='mt-16 p-6 place-content-center flex'>
+      <div className='mx-8 mt-16 p-6 place-content-center flex'>
         
-        <div className="p-6 max-w-screen-lg content-center justify-center">
+        <div className="mx-8 p-6 min-w-0 max-w-screen-lg content-center justify-center">
 
           <h1 className="text-5xl underline decoration-wavy decoration-stone-500 text-white">
             {post_info.title} <br/>
-            
           </h1>
 
           <div className="text-2xl p-6">
              programming isn't all fun and games. <GiConsoleController /> 
+             <img src='/python.jpg' alt='monty python' width={300} height={500} />
+          </div>
+
+          <div>
+
           </div>
 
           <p className="leading-loose tracking-wide text-xl text-cyan-50">
+
+          
             Whew, you just started programming, congrats! It's all gonna be so easy
             and fun and games... WRONG! Throw away the baby program you just made. 
             What did it do? Count to 10? Print out a pyramid? pffft! Real programming 
@@ -49,12 +57,18 @@ export default function Blog() {
 
             Say you have a massive stone tablet in the middle of a deserted island, and you have
             to pass this information to a bunch of archaeologists. What can you do?
+
+            <img src='/stone-tablet.jpg' alt='monty python' width={300} height={500} />
+
             <br />
             <br />
 
             Well, there are 2 options, you can get a piece of paper and copy down the contents of the
             stone tablet and send 1 to every archaeologists, or, you could send every archaeologists a 
             location of the stone table and get them to come and have a look at it themselves.
+            
+            <img src='/copying.jpg' alt='monty python' width={300} height={500} />
+            
             <br />
             <br />
 
@@ -90,15 +104,16 @@ export default function Blog() {
             or value rather ambiguous. Take this code.
             <br />
             <br />
-            [[0]] is a list within a list. To a list say [0] we can [0] * 2 to create a [0, 0] list. 
-            <br />
-            <br />
-            So as you'd expect, weird_list = [[0]] * 2 produces a list [[0], [0]]. Ok, cool beans.
-            <br />
-            <br />
+            <SyntaxHighlighter language='python'>
+              {
+                "[[0]] # is a list within a list. \n \
+[0] * 2 # We can to create a [0, 0] list. \n \
+weird_list = [[0]] * 2 # So as you'd expect, produces a list [[0], [0]]. \n \
+# Ok, cool beans. \n \
+weird_list[0][0] = 5 # What's weird_list now? [[5], [0]] ? WRONG!!!!!!"
+              }
+            </SyntaxHighlighter>
 
-            Now we try weird_list[0][0] = 5. What's weird_list now? [[5], [0]] ? WRONG!!!!!!
-            <br />
             <br />
 
             It's actually [[5], [5]]. But what? That makes no sense, why does the second item update 
@@ -108,23 +123,35 @@ export default function Blog() {
             Think about passing by reference or value. Which of the two creates funny overwrites?
             <br />
             <br />
+
             That's right! references. So when you did [[0]] * 2, this duplicates the list [0] to become
             [[0], [0]], but it doesn't create a value duplicate, but rather a reference duplicate. the first [0]
             and the second [0] actually point to the same location in memory! They are just different references
             to the same list. So wehn I modify list 1, list 2 is also modified as it's pointing to the 
             same location. 
+
+            <SyntaxHighlighter language='python'>
+              {
+                "weird_list = [[0]] * 2 \n \
+id(weird_list[0]) # The memory address is 140194895359040 \n \
+id(weird_list[1]) # The memory address is also 140194895359040! \n \
+# of course, the value of this memory address changes everytime we run this \n \
+# program. This is just an example of where the stone tablet would be."
+              }
+            </SyntaxHighlighter>
             <br />
             <br />
             In Python there are 4 primitive data types, ints, floats, strings, and booleans, and these are 
             always passed by value. This is why the above doesn't work with [0] * 2. But lists, objects and
-            everything else are by default passed as references.
+            everything else are by default passed as references. This is closely related to the concept of 
+            mutable vs immutable (read the next post!).
             <br />
             <br />
 
-            This is also true in most other programming languages. Passing by reference or
-            value is a core concept to understand in programming and always something to consider.
-            Next time you encounter unexpected behaviour, think, am I suppsoed to pass by references?
-            What do I really want?
+            Passing by reference or value is a core concept to understand in most programming languages 
+            and is always something to consider.
+            Next time you encounter unexpected behaviour, think, am I supposed to pass by references or value?
+            What behaviour do I really want?
 
           </p>
         
