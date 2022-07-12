@@ -43,7 +43,7 @@ export default function Home() {
           <Link href="blog">
             <a className={styles.card}>
 
-              <h2><BsFillPenFill/> fiction?!?!?!?!</h2>
+              <h2><BsFillPenFill/>fiction</h2>
               <p>why would you read fake stuff? </p>
             </a>
           </Link>

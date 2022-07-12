@@ -32,7 +32,7 @@ export default function Navbar() {
                 <NavbarIcon icon={<GiSandsOfTime size="32" />} goto='/time'/>
                 <NavbarIcon icon={<MdComputer size="32" />} goto='/programming'/>
 
-                <NavbarIcon className='float-left' icon={<BiHomeHeart size="32" goto='home' /> } />
+                <NavbarIcon className='float-left' icon={<BiHomeHeart size="32" goto='' /> } />
                 
             </div>
         </>
