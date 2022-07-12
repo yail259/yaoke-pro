@@ -1,10 +1,11 @@
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 // import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+// import Image from 'next/image';
 
 import { GiConsoleController } from 'react-icons/gi';
 
 const post_info = {
-  title: "The beginner's pitfalls of programming, accompanied by examples in Python.",
+  title: "The beginner's pitfalls of programming, with examples in Python.",
   date: "27.06.2022",
 }
 
@@ -18,7 +19,7 @@ export default function Blog() {
         
         <div className="mx-8 p-6 min-w-0 max-w-screen-lg content-center justify-center">
 
-          <h1 className="text-5xl underline decoration-wavy decoration-stone-500 text-white">
+          <h1 className="leading-relaxed text-5xl underline decoration-wavy decoration-stone-500 text-white">
             {post_info.title} <br/>
           </h1>
 
@@ -129,18 +130,20 @@ weird_list[0][0] = 5 # What's weird_list now? [[5], [0]] ? WRONG!!!!!!"
             and the second [0] actually point to the same location in memory! They are just different references
             to the same list. So wehn I modify list 1, list 2 is also modified as it's pointing to the 
             same location. 
+            <br />
+            <br />
 
             <SyntaxHighlighter language='python'>
               {
                 "weird_list = [[0]] * 2 \n \
 id(weird_list[0]) # The memory address is 140194895359040 \n \
 id(weird_list[1]) # The memory address is also 140194895359040! \n \
-# of course, the value of this memory address changes everytime we run this \n \
-# program. This is just an example of where the stone tablet would be."
+# Note: the value of this memory address changes everytime we run this \n \
+# program. This is just a random example of where the data is allocated."
               }
             </SyntaxHighlighter>
-            <br />
-            <br />
+            
+            
             In Python there are 4 primitive data types, ints, floats, strings, and booleans, and these are 
             always passed by value. This is why the above doesn't work with [0] * 2. But lists, objects and
             everything else are by default passed as references. This is closely related to the concept of 
