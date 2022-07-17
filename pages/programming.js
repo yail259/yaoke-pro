@@ -26,8 +26,9 @@ export default function Blog() {
 
       <ul className='mt-24 flex w-screen justify-center'>
         
-          <Link href='/prog_blog/pitfall'>
-            <div className="my-6 py-4 p-6 px-4 mx-10 rounded-lg border shadow-md hover:text-morb-yellow cursor-pointer" >
+          <LinkWrapper goto='/prog_blog/pitfall'
+          component = {
+            <div className="my-6 py-4 p-6 px-4 mx-10 rounded-lg border shadow-md hover:text-morb-yellow" >
 
                 <h5 className="mb-2 text-2xl font-bold tracking-tight ">
                   {post_info.title}
@@ -41,7 +42,8 @@ export default function Blog() {
                   Approximately 500 words long. 5 min read.
                 </div>
             </div>
-          </Link>
+          }
+          />
 
       </ul>
     </>

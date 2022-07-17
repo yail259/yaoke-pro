@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import LinkWrapper from '../lib/LinkerWrapper';
 
 import { getPostsData } from '../components/posts';
 
@@ -18,7 +19,9 @@ export default function Blog({ post_data }) {
       {console.log(post_data)}
       <ul className='mt-24'>
         {post_data.map(({ id, date, title, blog_content }) => (
-          <Link href={'blog_posts/' + id} key={id} >
+          <LinkWrapper 
+          goto={'blog_posts/' + id} 
+          component = {
             <div className=" cloumns-2 my-6 py-4 p-6 px-4 mx-10 rounded-lg border shadow-md bg-gray-800 border-gray-700 hover:bg-gray-700 text-white hover:text-blue-400" >
 
                 <h5 className="mb-2 text-2xl font-bold tracking-tight ">
@@ -33,7 +36,8 @@ export default function Blog({ post_data }) {
                   {date}
                 </div>
             </div>
-          </Link>
+          } 
+          />
         ))}
       </ul>
     </>

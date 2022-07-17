@@ -1,4 +1,5 @@
 import Link from "next/link";
+import LinkWrapper from "../lib/LinkerWrapper";
 
 export default function Lost() {
     return (
@@ -23,11 +24,14 @@ export default function Lost() {
                 </div>
 
                 <div className="w-screen justify-center flex p-10">
-                    <Link href='/'>
+                    <LinkerWrapper 
+                    goto = '/'
+                    component = {
                         <button className="outline-4 outline outline-offset-2 hover:outline-morb-blue rounded-lg text-3xl">
                             Let's get you home :)
                         </button>
-                    </Link>
+                    } 
+                    />
                 </div>
                 
                 
