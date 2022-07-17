@@ -24,7 +24,7 @@ export default function Lost() {
                 </div>
 
                 <div className="w-screen justify-center flex p-10">
-                    <LinkerWrapper 
+                    <LinkWrapper 
                     goto = '/'
                     component = {
                         <button className="outline-4 outline outline-offset-2 hover:outline-morb-blue rounded-lg text-3xl">

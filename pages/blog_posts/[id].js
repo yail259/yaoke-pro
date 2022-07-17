@@ -25,20 +25,25 @@ export default function Blog(post_data) {
   return (
     <>
 
-      <div className='mt-16 p-6'>
+      <div className='mx-8 mt-16 p-6 place-content-center flex'>
         
-        <div className="p-6 my-6" >
+        <div className="mx-8 p-6 min-w-0 max-w-screen-lg content-center justify-center" >
 
-          <h1 className="text-5xl underline decoration-wavy decoration-stone-500 text-white">
-            {title}
+        <h1 className="leading-relaxed text-5xl underline decoration-wavy decoration-stone-500 text-white">
+            {title} <br/>
           </h1>
 
-          <div className="text-lg p-6">
-            {date}
+          <div className="text-2xl p-6">
+             {date}
           </div>
 
-          <p className="">
+          <div>
+
+          </div>
+
+          <p className="leading-loose tracking-wide text-xl text-cyan-50">
             {blog_content}
+
           </p>
         
         </div>

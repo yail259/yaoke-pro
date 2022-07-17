@@ -1,6 +1,6 @@
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 // import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-// import Image from 'next/image';
+import Image from 'next/image';
 
 import { GiConsoleController } from 'react-icons/gi';
 

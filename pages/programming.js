@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import LinkWrapper from "../lib/LinkerWrapper";
 
 const post_info = {
     title: "The beginner's pitfalls of programming in Python.",
@@ -34,7 +34,7 @@ export default function Blog() {
                   {post_info.title}
                 </h5>
     
-                <p className="mb-3 font-norma">
+                <p className="mb-3">
                   {' '} {post_info.date}
                 </p>
     
