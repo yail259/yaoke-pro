@@ -26,24 +26,22 @@ export default function Blog() {
 
       <ul className='mt-24 flex w-screen justify-center'>
         
-          <LinkWrapper goto='/prog_blog/pitfall'
-          component = {
+          <LinkWrapper goto='/prog_blog/pitfall'>
             <div className="my-6 py-4 p-6 px-4 mx-10 rounded-lg border shadow-md hover:text-morb-yellow" >
 
-                <h5 className="mb-2 text-2xl font-bold tracking-tight ">
-                  {post_info.title}
-                </h5>
-    
-                <p className="mb-3">
-                  {' '} {post_info.date}
-                </p>
-    
-                <div className="inline-flex items-center py-2 px-3 text-sm font-medium text-cente rounded-lg">
-                  Approximately 500 words long. 5 min read.
-                </div>
+              <h5 className="mb-2 text-2xl font-bold tracking-tight ">
+                {post_info.title}
+              </h5>
+
+              <p className="mb-3">
+                {' '} {post_info.date}
+              </p>
+
+              <div className="inline-flex items-center py-2 px-3 text-sm font-medium text-cente rounded-lg">
+                Approximately 500 words long. 5 min read.
+              </div>
             </div>
-          }
-          />
+          </LinkWrapper>
 
       </ul>
     </>

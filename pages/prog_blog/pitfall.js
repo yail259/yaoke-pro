@@ -15,7 +15,7 @@ export default function Blog() {
     
   return (
     <>
-      <div className='mx-8 mt-16 p-6 place-content-center flex'>
+      <div className='mx-8 p-6 place-content-center flex'>
         
         <div className="mx-8 p-6 min-w-0 max-w-screen-lg content-center justify-center">
 
