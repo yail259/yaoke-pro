@@ -17,7 +17,7 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>
           yao's 
-          <span className={styles.cool}> cool </span>
+          <span className='text-primary'> cool </span>
           website
         </h1>
 

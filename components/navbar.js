@@ -23,6 +23,11 @@ const NavbarIcon = ({ icon, goto = '/' }) => {
 }
 
 export default function Navbar() {
+    useEffect(() => {
+        themeChange(false)
+        // 👆 false parameter is required for react project
+      }, [])
+
     return (
         <>
             <div className="px-8 fixed justify-end top-0 left-0 w-screen h-16 m-0 flex flex-row bg-gray-300 shadow-lg">
@@ -30,7 +35,7 @@ export default function Navbar() {
                 <NavbarIcon icon={<GiSandsOfTime size="32" />} goto='/time'/>
                 <NavbarIcon icon={<MdComputer size="32" />} goto='/programming'/>
 
-                <NavbarIcon className='float-left' icon={<BiHomeHeart size="32" goto='' /> } />
+                <NavbarIcon className='float-left' icon={<BiHomeHeart size="32" goto='/' /> } />
                 
             </div>
         </>
