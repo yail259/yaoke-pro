@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import LinkWrapper from '../lib/LinkerWrapper';
+import { useEffect, useState } from 'react';
 
 import { getPostsData } from '../components/posts';
 
@@ -14,9 +15,27 @@ export async function getStaticProps() {
 }
 
 export default function Blog({ post_data }) {
+  const [brief_start, change_brief] = useState(0);
+  const [preview, change_preview] = useState("");
+
+  const content = post_data[0].blog_content;
+
+  // console.log(content);
+
+  useEffect (() => {
+    const interval_id = setInterval(() => {
+      change_brief(brief_start + 1);
+
+    }, 1000);
+
+    // console.log(content);
+    change_preview(content.substr(brief_start, brief_start+50));
+
+    return () => clearInterval(interval_id);
+  })
+
   return (
     <>
-      {console.log(post_data)}
       <ul className='mt-24 flex w-screen justify-center'>
         {post_data.map(({ id, date, title, blog_content }) => (
           <LinkWrapper goto={'blog_posts/' + id} key = {id}>
@@ -27,10 +46,10 @@ export default function Blog({ post_data }) {
               </h5>
 
               <p className="mb-3">
-                {blog_content.substr(0, 99)}
+                {preview}
               </p>
 
-              <div className="inline-flex items-center py-2 px-3 text-sm font-medium text-cente rounded-lg">
+              <div className="">
                 {date}
               </div>
             </div>

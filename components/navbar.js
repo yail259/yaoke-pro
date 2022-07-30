@@ -23,11 +23,6 @@ const NavbarIcon = ({ icon, goto = '/' }) => {
 }
 
 export default function Navbar() {
-    useEffect(() => {
-        themeChange(false)
-        // 👆 false parameter is required for react project
-      }, [])
-
     return (
         <>
             <div className="px-8 fixed justify-end top-0 left-0 w-screen h-16 m-0 flex flex-row bg-gray-300 shadow-lg">

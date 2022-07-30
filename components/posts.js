@@ -2,13 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-
-import unified from 'unified';
-import parse from 'remark-parse';
-import remark2react from 'remark-react';
-
-
-
 const posts_dir = path.join(process.cwd(), 'writing');
 
 export function getAllPostIds() {
@@ -27,7 +20,12 @@ export function getPostByID( id ) {
     const file_dir = path.join(posts_dir, `${id}.md`);
     const markdown = fs.readFileSync(file_dir, 'utf-8');
 
-    // const matter_result = matter(markdown);
+    const { data: frontmatter, content } = matter(markdown);
+
+    return {
+        frontmatter,
+        content,
+    };
     // const blog_content = matter_result.content;
 
     // Use remark to convert markdown into HTML string
@@ -36,12 +34,7 @@ export function getPostByID( id ) {
     //     .process(matter_result.content);
     // const blog_content = processed_content.toString();
 
-    const blog_content = unified().use(parse).use(remark2react).processSync(markdown).result;
-
-    return {
-        ... matter_result.data,
-        blog_content,
-    };
+    // const blog_content = unified().use(parse).use(remark2react).processSync(markdown).result;
 }
 
 export function getPostsData() {
