@@ -21,7 +21,7 @@ export async function getStaticProps({ params }) {
 
 
 export default function Blog(post_data) {
-  console.log(post_data);
+  // console.log(post_data);
   const {frontmatter, content} = post_data;
     
   return (

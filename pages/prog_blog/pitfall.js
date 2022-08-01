@@ -38,16 +38,11 @@ export default function Blog() {
             Whew, you just started programming, congrats! It's all gonna be so easy
             and fun and games... WRONG! Throw away the baby program you just made. 
             What did it do? Count to 10? Print out a pyramid? pffft! Real programming 
-            is hard with memory and algorithms and COMP2017 and you haven't started programming 
+            is hard and you haven't started programming 
             until you've cried in the shower.
-            A good teacher will never stop you from crying in the shower, he/she will simply
+            A good teacher  will simply
             let you know why you are crying in the shower and it's up to you to stop crying 
             and fix your bugs.
-            <br />
-            <br />
-            That being said, this is a guide into
-            identifying why you <i>will</i> be cry down the road in programming and hopefully 
-            make your life a bit easier!
             <br />
             <br />
 
@@ -89,6 +84,7 @@ export default function Blog() {
             <br />
             <br />
             Aha, so passing by reference is always faster and better! Right?
+
             <br />
             <br />
             Consider the case that each archaeologist wants to take notes on the tablet. If each got a copy
@@ -152,7 +148,7 @@ id(weird_list[1]) # The memory address is also 140194895359040! \n \
             <br />
 
             Passing by reference or value is a core concept to understand in most programming languages 
-            and is always something to consider.
+            and is always something to consider. 
             Next time you encounter unexpected behaviour, think, am I supposed to pass by references or value?
             What behaviour do I really want?
 
