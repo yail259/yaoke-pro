@@ -1,8 +1,9 @@
 import { getPostByID, getAllPostIds } from '../../components/posts';
 import md from 'markdown-it';
+import ReadingProgress from '../../components/ReadingProgress';
 
 export async function getStaticPaths() {
-  const paths = getAllPostIds();
+  const paths = getAllPostIds('writing');
 
   return {
     paths,
@@ -12,7 +13,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     console.log(params);
-    const post_data = getPostByID(params.id);
+    const post_data = getPostByID('writing', params.id);
   
     return {
       props: post_data,
@@ -26,7 +27,7 @@ export default function Blog(post_data) {
     
   return (
     <>
-
+      <ReadingProgress />
       <div className='mx-8 mt-16 p-6 place-content-center flex'>
         
         <div className="mx-8 p-6 min-w-0 max-w-screen-lg content-center justify-center" >

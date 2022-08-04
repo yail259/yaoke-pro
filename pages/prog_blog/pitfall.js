@@ -1,6 +1,5 @@
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 // import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import Image from 'next/image';
 
 import { GiConsoleController } from 'react-icons/gi';
 
@@ -24,6 +23,7 @@ export default function Blog() {
           </h1>
 
           <div className="text-2xl p-6">
+            {post_info.date}
              programming isn't all fun and games. <GiConsoleController /> 
              <img src='/python.jpg' alt='monty python' width={300} height={500} />
           </div>

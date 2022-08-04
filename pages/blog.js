@@ -1,11 +1,11 @@
-import Link from 'next/link';
-import LinkWrapper from '../lib/LinkerWrapper';
+
 import { useEffect, useState } from 'react';
 
 import { getPostsData } from '../components/posts';
+import ListPost from '../components/listPosts';
 
 export async function getStaticProps() {
-  const post_data = getPostsData();
+  const post_data = getPostsData("writing");
 
   return {
     props: {
@@ -36,26 +36,7 @@ export default function Blog({ post_data }) {
 
   return (
     <>
-      <ul className='mt-24 flex w-screen justify-center'>
-        {post_data.map(({ id, date, title, blog_content }) => (
-          <LinkWrapper goto={'blog_posts/' + id} key = {id}>
-            <div className="my-6 py-4 p-6 px-4 mx-10 rounded-lg border shadow-md hover:text-morb-yellow" >
-
-              <h5 className="mb-2 text-2xl font-bold tracking-tight ">
-                {title} 
-              </h5>
-
-              <p className="mb-3">
-                {preview}
-              </p>
-
-              <div className="">
-                {date}
-              </div>
-            </div>
-          </LinkWrapper>
-        ))}
-      </ul>
+      <ListPost post_data={post_data} />
     </>
   );
 }

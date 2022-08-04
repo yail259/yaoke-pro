@@ -2,9 +2,10 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-const posts_dir = path.join(process.cwd(), 'writing');
 
-export function getAllPostIds() {
+export function getAllPostIds(folder) {
+    const posts_dir = path.join(process.cwd(), folder);
+
     const fileNames = fs.readdirSync(posts_dir)
     return fileNames.map(fileName => {
         return {
@@ -15,9 +16,9 @@ export function getAllPostIds() {
     })
 }
 
-export function getPostByID( id ) {
+export function getPostByID( folder, id ) {
 
-    const file_dir = path.join(posts_dir, `${id}.md`);
+    const file_dir = path.join(process.cwd(), folder, `${id}.md`);
     const markdown = fs.readFileSync(file_dir, 'utf-8');
 
     const { data: frontmatter, content } = matter(markdown);
@@ -37,7 +38,9 @@ export function getPostByID( id ) {
     // const blog_content = unified().use(parse).use(remark2react).processSync(markdown).result;
 }
 
-export function getPostsData() {
+export function getPostsData(folder) {
+    const posts_dir = path.join(process.cwd(), folder);
+
     const filename = fs.readdirSync(posts_dir);
 
     const post_data = filename.map((filename) => {
