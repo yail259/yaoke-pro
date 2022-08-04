@@ -2,6 +2,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 // import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 import { GiConsoleController } from 'react-icons/gi';
+import ReadingProgress from '../../components/ReadingProgress';
 
 const post_info = {
   title: "The beginner's pitfalls of programming, with examples in Python.",
@@ -14,6 +15,7 @@ export default function Blog() {
     
   return (
     <>
+      <ReadingProgress />
       <div className='mx-8 p-6 place-content-center flex'>
         
         <div className="mx-8 p-6 min-w-0 max-w-screen-lg content-center justify-center">
