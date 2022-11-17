@@ -2,8 +2,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import styles from '../styles/Home.module.css'
-
 
 import { GiSandsOfTime } from 'react-icons/gi'
 import { MdComputer } from 'react-icons/md'
@@ -11,74 +9,37 @@ import { BsFillPenFill } from 'react-icons/bs'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      
+    <div className="flex">     
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          yao's 
-          <span className='text-morb-blue'> cool </span>
-          website
-        </h1>
+      <main className="flex">
+        <div className="flex text-5xl h-screen w-69 justify-center items-center flex-col">
+          <h1 className='hover:text-morb-yellow'>
+            yao's 
+            <span className='text-morb-blue'> cool </span>
+            website
+          </h1>
 
-        <pre className={styles.description}>
-          some things im working on
-        </pre>
+          <pre className='flex text-2xl m-4 hover:text-morb-yellow'>
+            playing around with javascript
+          </pre>
+        </div>       
 
-        <div className={styles.grid}>
+
+        <div className="flex">
           <Link href="programming">
-            <a className={styles.card}>
+            <a className="top-6 h-32 m-4 hover:m-6 p-6 text-left border-2 rounded-lg hover:text-morb-yellow">
               <h2> <MdComputer/> programming; </h2>
-              <p>good programming resources </p>
+              <p>some tutorials and stuff </p>
             </a>
           </Link>
           
           <Link href="time">
-            <a className={styles.card}>
-              <h2> <GiSandsOfTime/> what time is it??? </h2>
-              
+            <a className="h-20 m-6 hover:m-8 p-6 text-left border-2 rounded-lg hover:text-morb-yellow">
+              <h2> <GiSandsOfTime/> what time is it??? </h2>              
             </a>
           </Link>
-          
-          <Link href="blog">
-            <a className={styles.card}>
-
-              <h2><BsFillPenFill/>fiction</h2>
-              <p>why would you read fake stuff? </p>
-            </a>
-          </Link>
-          
-          <a
-            href="https://crimanimal.com"
-            className={styles.card}
-          >
-            <h2> 
-            <Image src="/bird.png" alt="Jeff the bird" width={50} height={50}/>
-              buy my merch
-            </h2>
-            <p>
-              support crim_animals :)))))
-            </p>
-          </a>
-
-          <a
-            href="https://crimanimal.com"
-            className={styles.card}
-          >
-            <h2> 
-              big project: <br/>
-              life-tracker(???) coming soon!
-            </h2>
-            <p>
-              exciting, can't wait to be a trillionaire
-            </p>
-          </a>
         </div>
       </main>
-
-      <footer className={styles.footer}>
-
-      </footer>
     </div>
   )
 }

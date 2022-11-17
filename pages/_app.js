@@ -1,4 +1,4 @@
-import Navbar from '../components/navbar'
+
 import Head from 'next/head';
 import Link from 'next/link';
 import '../styles/globals.css'
@@ -10,7 +10,7 @@ import Cursor from '../lib/Cursor';
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Layout>
+      <Layout className="">
         <Cursor>
           <Head>
             <title>yao's digital playground</title>
@@ -19,7 +19,6 @@ function MyApp({ Component, pageProps }) {
             content = "Yao and he's online space where he plays around with Javascript"/>
             <link rel="icon" href="/bird.png" />
           </Head>
-          <Navbar />
           <Component {...pageProps} className="relative"/>
         </Cursor>
       </Layout>

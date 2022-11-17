@@ -25,7 +25,8 @@ const NavbarIcon = ({ icon, goto = '/' }) => {
 export default function Navbar() {
     return (
         <>
-            <div className="px-8 fixed justify-end top-0 left-0 w-screen h-16 m-0 flex flex-row bg-gray-300 shadow-lg">
+            <div className="px-8 bg-morb-white fixed justify-end top-0 left-0 w-screen h-16 m-0 flex flex-row shadow-lg
+                            hover:bg-morb-black">
                 <NavbarIcon icon={<BsFillPenFill size="28" />} goto='/blog'/>
                 <NavbarIcon icon={<GiSandsOfTime size="32" />} goto='/time'/>
                 <NavbarIcon icon={<MdComputer size="32" />} goto='/programming'/>
